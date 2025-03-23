@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter - #Include IT Technical Club SGSITS</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Updated gradient with blue and purple */
+            --primary-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            --secondary-gradient: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+            --dark-gradient: linear-gradient(135deg, #3f2b96 0%, #5a55ae 100%);
+            --accent-gradient: linear-gradient(135deg, #8A2387 0%, #E94057 50%, #F27121 100%);
+            --newsletter-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        }
+        
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* 3D Navbar */
+        .navbar {
+            background: var(--dark-gradient) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .navbar-brand img {
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+            margin-right: 10px;
+            transform: perspective(800px) rotateY(15deg);
+            transition: transform 0.5s ease;
+        }
+        
+        .navbar-brand:hover img {
+            transform: perspective(800px) rotateY(0deg);
+        }
+        
+        .nav-link {
+            position: relative;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #fff, transparent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* 3D Hero Section - Updated with blue/purple gradient */
+        .page-header {
+            background: var(--primary-gradient) !important;
+            position: relative;
+            overflow: hidden;
+            padding: 80px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            transform: rotate(45deg);
+        }
+        
+        .page-header h1 {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            transform: perspective(1000px) rotateX(0deg);
+            transition: transform 0.5s ease;
+            position: relative;
+            z-index: 10;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+        
+        .page-header h1:hover {
+            transform: perspective(1000px) rotateX(5deg);
+        }
+        
+        /* 3D Cards with blue/purple theme */
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: none;
+            transform: perspective(1000px) rotateX(0deg);
+        }
+        
+        .card:hover {
+            transform: perspective(1000px) rotateX(5deg) translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-weight: 700;
+            color: #333;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-gradient);
+            border-radius: 3px;
+        }
+        
+        .section-title.text-center::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Buttons with updated gradient */
+        .btn {
+            position: relative;
+            overflow: hidden;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            padding: 12px 30px;
+            border: none;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary {
+            background: var(--primary-gradient) !important;
+        }
+        
+        .btn-light {
+            background: rgba(255, 255, 255, 0.9);
+            color: #0061ff;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Gradient Sections */
+        .bg-light {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%) !important;
+        }
+        
+        .bg-primary {
+            background: var(--primary-gradient) !important;
+        }
+        
+        /* Newsletter List Item */
+        .newsletter-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            transform: perspective(1000px);
+        }
+        
+        .newsletter-item:hover {
+            transform: perspective(1000px) translateZ(30px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Footer with blue/purple gradient */
+       
+        footer {
+            position: relative;
+            overflow: hidden;
+            background: var(--dark-gradient);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            animation: patternMove 30s linear infinite alternate;
+        }
+        
+        
+        .social-links {
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+            color: white;
+        }
+        
+        .social-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links ul li a:hover {
+            color: rgba(255, 255, 255, 0.7);
+            padding-left: 5px;
+        }
+        
+        .footer-contact ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-contact ul li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .footer-contact ul li i {
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+        
+        .footer-bottom {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Form styles and 3D effects */
+        .form-control, .form-select {
+            border-radius: 10px;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-color: #6a11cb;
+        }
+        
+        /* Form validation styles */
+        .form-control.is-invalid {
+            border-color: #ff4757;
+            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.1);
+        }
+        
+        .form-control.is-valid {
+            border-color: #2ed573;
+            box-shadow: 0 5px 15px rgba(46, 213, 115, 0.1);
+        }
+        
+        .invalid-feedback {
+            color: #ff4757;
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+        }
+        
+        .valid-feedback {
+            color: #2ed573;
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+        }
+        
+        /* Accordion styling with blue/purple gradients */
+        .accordion-item {
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .accordion-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .accordion-button {
+            padding: 15px 20px;
+            font-weight: 600;
+            border-radius: 15px !important;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background: var(--primary-gradient);
+            color: white;
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: transparent;
+        }
+        
+        /* Newsletter card with blue/purple gradients */
+        .newsletter-card {
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            border: none;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .newsletter-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .newsletter-card .card-img-top {
+            transition: all 0.5s ease;
+        }
+        
+        .newsletter-card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+        
+        /* Alert styling with gradients */
+        .alert {
+            border-radius: 10px;
+            padding: 15px 20px;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+        
+        .alert-success {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: #fff;
+        }
+        
+        .alert-danger {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+            color: #fff;
+        }
+        
+        .alert-warning {
+            background: linear-gradient(135deg, #f9c851 0%, #ffcc80 100%);
+            color: #fff;
+        }
+        
+        /* Loading animations */
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            border-width: 0.3em;
+        }
+        
+        /* Animation for subscription success */
+        @keyframes successPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .subscription-success {
+            animation: successPulse 1s ease-in-out;
+        }
+        
+        /* Hashtag styling */
+        .hashtag {
+            color: #8f94fb;
+            font-weight: 900;
+        }
+        
+        /* Real-time validation feedback animation */
+        @keyframes validationShake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+        
+        .shake {
+            animation: validationShake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+        }
+        footer {
+        background: var(--dark-gradient) !important;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+    
+    footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 20px 20px;
+        z-index: -1;
+        animation: patternMove 30s linear infinite alternate;
+    }
+    
+    @keyframes patternMove {
+        0% { transform: translateX(0) translateY(0); }
+        100% { transform: translateX(10px) translateY(10px); }
+    }
+    
+    .footer-heading::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background: linear-gradient(90deg, #fff, transparent);
+    }
+    
+    .footer-links li a {
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+    
+    .footer-links li a:hover {
+        transform: translateX(5px);
+        opacity: 0.8;
+    }
+    
+    .social-links {
+        gap: 10px;
+    }
+    
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+        transform: translateY(-5px);
+        background: var(--primary-gradient);
+        color: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .footer-brand img {
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+    }
+    
+    /* Form control in footer */
+    footer .form-control {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.2);
+        color: white;
+    }
+    
+    footer .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+    }
+    
+    footer .form-control:focus {
+        box-shadow: none;
+        border-color: rgba(255, 255, 255, 0.5);
+    }
+    
+    /* Improved overall page styles */
+    .card {
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+    }
+    
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn {
+        border-radius: 30px;
+        padding: 10px 25px;
+        font-weight: 600;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        transition: all 0.3s ease;
+    }
+    
+    .btn::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        transition: all 0.4s ease;
+        z-index: -1;
+    }
+    
+    .btn:hover::after {
+        left: 100%;
+    }
+    
+    .page-header {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .page-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    }
+    
+    .newsletter-card {
+        overflow: hidden;
+    }
+    
+    .newsletter-card .card-img-top {
+        transition: transform 0.5s ease;
+    }
+    
+    .newsletter-card:hover .card-img-top {
+        transform: scale(1.05);
+    }
+    
+    /* Custom scroll bar */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: var(--primary-gradient);
+        border-radius: 5px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--dark-gradient);
+    }
+    
+    /* Additional animations */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .section-title, .newsletter-card, .card {
+        animation: fadeInUp 0.8s ease forwards;
+    }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="logo.png.png" alt="#Include Logo" height="40">
+                <span class="hashtag"></span>INCLUDE
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/members.html">Members</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/newsletter.html">Newsletter</a>
+                    </li>
+                   
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with updated blue/purple gradient -->
+    <header class="page-header text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4">Newsletter</h1>
+                    <p class="lead">Stay updated with the latest tech news, event announcements, and club activities.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Newsletter Issues Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title">Recent Newsletters</h2>
+                    <p>Find all our latest newsletters and announcements below.</p>
+                </div>
+            </div>
+            <div class="row" id="newsletter-list">
+                <!-- Newsletter items will be populated here -->
+                <div class="col-12 text-center" id="loading-newsletters">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <div class="col-12 text-center d-none" id="no-newsletters">
+                    <p class="lead text-muted">No newsletters available at the moment. Subscribe to receive future updates!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscribe Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card border-0 shadow">
+                        <div class="card-body p-5">
+                            <h2 class="section-title text-center mb-4">Subscribe to Our Newsletter</h2>
+                            <p class="text-center mb-4">Get the latest updates, event announcements, and tech resources directly in your inbox.</p>
+                            <div id="subscription-alert" class="alert d-none" role="alert"></div>
+                            <form id="newsletter-subscription-form" novalidate>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="subscriber-name" placeholder="Your Name" required>
+                                            <div class="invalid-feedback" id="name-feedback"></div>
+                                            <div class="valid-feedback">Looks good!</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" id="subscriber-email" placeholder="Your Email" required>
+                                            <div class="invalid-feedback" id="email-feedback"></div>
+                                            <div class="valid-feedback">Email format is valid!</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <select class="form-select" id="subscriber-year" required>
+                                            <option value="" selected disabled>Select Your Year</option>
+                                            <option value="1">1st Year</option>
+                                            <option value="2">2nd Year</option>
+                                            <option value="3">3rd Year</option>
+                                            <option value="4">4th Year</option>
+                                            <option value="alumni">Alumni</option>
+                                            <option value="faculty">Faculty</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                        <div class="invalid-feedback" id="year-feedback">Please select your year.</div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="terms-checkbox" required>
+                                            <label class="form-check-label" for="terms-checkbox">
+                                                I agree to receive newsletters and updates from #Include
+                                            </label>
+                                            <div class="invalid-feedback" id="terms-feedback">You must agree before submitting.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 text-center">
+                                        <button type="submit" class="btn btn-primary btn-lg" id="subscribe-button">Subscribe</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Archive Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Newsletter Archive</h2>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="accordion" id="newsletter-archive">
+                        <!-- Archive items will be populated here -->
+                        <div class="text-center mb-4" id="loading-archive">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                        <div class="text-center mb-4 d-none" id="no-archive">
+                            <p class="text-muted">No archived newsletters available.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with updated blue/purple gradient -->
+    <footer class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Logo and About Column -->
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-brand d-flex align-items-center mb-3">
+                        
+                        <h4 class="mb-0 hashtag">#Include</h4>
+                    </div>
+                    <p class="mb-3">The official technical club of IT Department, SGSITS dedicated to fostering technical growth and innovation.</p>
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-envelope me-2"></i>
+                        <a href="mailto:include@sgsits.ac.in" class="text-white text-decoration-none">include@sgsits.ac.in</a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links Column -->
+                <div class="col-md-4 col-lg-3 mb-4 mb-md-0">
+                    <h5 class="mb-4 position-relative pb-2 footer-heading">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2"><a href="/" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 small"></i>Home</a></li>
+                        <li class="mb-2"><a href="/about.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 small"></i>About</a></li>
+                        <li class="mb-2"><a href="/events.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 small"></i>Events</a></li>
+                        <li class="mb-2"><a href="/members.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 small"></i>Members</a></li>
+                        <li><a href="/newsletter.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 small"></i>Newsletter</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Connect Column -->
+                <div class="col-md-4 col-lg-3 mb-4 mb-md-0">
+                    <h5 class="mb-4 position-relative pb-2 footer-heading">Connect With Us</h5>
+                    <div class="social-links d-flex flex-wrap">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Newsletter Subscription Column -->
+               
+            
+            <!-- Footer Bottom Line with animating background -->
+            <div class="footer-bottom mt-4 pt-4 border-top border-secondary position-relative">
+                <div class="row">
+                    <div class="col-md-6 mb-2 mb-md-0">
+                        <p class="mb-0">&copy; 2023 #Include. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="http://www.includesgsits.tech" class="text-white text-decoration-none">www.includesgsits.tech</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS for Real-time Form Validation and Response -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Dummy data for recent newsletters (for demonstration)
+            const recentNewsletters = [
+                { id: 1, title: 'March 2025 Tech Updates', date: 'March 15, 2025', image: '/api/placeholder/800/400' },
+                { id: 2, title: 'February 2025 Events Recap', date: 'February 28, 2025', image: '/api/placeholder/800/400' },
+                { id: 3, title: 'January 2025 #Include Digest', date: 'January 31, 2025', image: '/api/placeholder/800/400' }
+            ];
+            
+            // Dummy data for archived newsletters (for demonstration)
+            const archivedNewsletters = [
+                { id: 4, title: 'December 2024 Year-End Special', date: 'December 20, 2024', content: 'Year-end summary of all club activities and achievements.' },
+                { id: 5, title: 'November 2024 Tech Trends', date: 'November 30, 2024', content: 'Latest technology trends and industry updates.' },
+                { id: 6, title: 'October 2024 Hackathon Special', date: 'October 25, 2024', content: 'Coverage of our annual hackathon event and winners.' }
+            ];
+            
+            // Form elements
+            const nameInput = document.getElementById('subscriber-name');
+            const emailInput = document.getElementById('subscriber-email');
+            const yearSelect = document.getElementById('subscriber-year');
+            const termsCheckbox = document.getElementById('terms-checkbox');
+            const subscriptionForm = document.getElementById('newsletter-subscription-form');
+            const subscriptionAlert = document.getElementById('subscription-alert');
+            
+            // Function to populate recent newsletters
+            function populateRecentNewsletters() {
+                const newsletterList = document.getElementById('newsletter-list');
+                const loadingElement = document.getElementById('loading-newsletters');
+                const noNewslettersElement = document.getElementById('no-newsletters');
+                
+                // Simulate loading
+                setTimeout(() => {
+                    loadingElement.classList.add('d-none');
+                    
+                    if (recentNewsletters.length === 0) {
+                        noNewslettersElement.classList.remove('d-none');
+                        return;
+                    }
+                    
+                    recentNewsletters.forEach(newsletter => {
+                        const col = document.createElement('div');
+                        col.className = 'col-md-4 mb-4';
+                        
+                        col.innerHTML = `
+                            <div class="newsletter-card">
+                                <img src="${newsletter.image}" class="card-img-top" alt="${newsletter.title}">
+                                <div class="card-body">
+                                    <h5 class="card-title">${newsletter.title}</h5>
+                                    <p class="card-text"><small class="text-muted">Published on ${newsletter.date}</small></p>
+                                    <a href="#" class="btn btn-primary">Read Newsletter</a>
+                                </div>
+                            </div>
+                        `;
+                        
+                        newsletterList.appendChild(col);
+                    });
+                }, 1500);
+            }
+            
+            // Function to populate archived newsletters
+            function populateArchivedNewsletters() {
+                const archiveContainer = document.getElementById('newsletter-archive');
+                const loadingElement = document.getElementById('loading-archive');
+                const noArchiveElement = document.getElementById('no-archive');
+                
+                // Simulate loading
+                setTimeout(() => {
+                    loadingElement.classList.add('d-none');
+                    
+                    if (archivedNewsletters.length === 0) {
+                        noArchiveElement.classList.remove('d-none');
+                        return;
+                    }
+                    
+                    archivedNewsletters.forEach((newsletter, index) => {
+                        const accordionItem = document.createElement('div');
+                        accordionItem.className = 'accordion-item';
+                        
+                        accordionItem.innerHTML = `
+                            <h2 class="accordion-header" id="heading${newsletter.id}">
+                                <button class="accordion-button ${index !== 0 ? 'collapsed' : ''}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${newsletter.id}" aria-expanded="${index === 0 ? 'true' : 'false'}" aria-controls="collapse${newsletter.id}">
+                                    ${newsletter.title} - <span class="ms-2 text-muted">${newsletter.date}</span>
+                                </button>
+                            </h2>
+                            <div id="collapse${newsletter.id}" class="accordion-collapse collapse ${index === 0 ? 'show' : ''}" aria-labelledby="heading${newsletter.id}" data-bs-parent="#newsletter-archive">
+                                <div class="accordion-body">
+                                   <p>${newsletter.content}</p>
+                                    <a href="#" class="btn btn-sm btn-primary mt-3">View Full Newsletter</a>
+                                </div>
+                            </div>
+                        `;
+                        
+                        archiveContainer.appendChild(accordionItem);
+                    });
+                }, 1800);
+            }
+            
+            // Real-time form validation
+            function validateName() {
+                const name = nameInput.value.trim();
+                const feedbackElement = document.getElementById('name-feedback');
+                
+                if (name === '') {
+                    nameInput.classList.add('is-invalid');
+                    nameInput.classList.remove('is-valid');
+                    feedbackElement.textContent = 'Please enter your name.';
+                    return false;
+                } else if (name.length < 2) {
+                    nameInput.classList.add('is-invalid');
+                    nameInput.classList.remove('is-valid');
+                    feedbackElement.textContent = 'Name must be at least 2 characters.';
+                    return false;
+                } else {
+                    nameInput.classList.remove('is-invalid');
+                    nameInput.classList.add('is-valid');
+                    return true;
+                }
+            }
+            
+            function validateEmail() {
+                const email = emailInput.value.trim();
+                const feedbackElement = document.getElementById('email-feedback');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                
+                if (email === '') {
+                    emailInput.classList.add('is-invalid');
+                    emailInput.classList.remove('is-valid');
+                    feedbackElement.textContent = 'Please enter your email address.';
+                    return false;
+                } else if (!emailRegex.test(email)) {
+                    emailInput.classList.add('is-invalid');
+                    emailInput.classList.remove('is-valid');
+                    feedbackElement.textContent = 'Please enter a valid email address.';
+                    return false;
+                } else {
+                    emailInput.classList.remove('is-invalid');
+                    emailInput.classList.add('is-valid');
+                    return true;
+                }
+            }
+            
+            function validateYear() {
+                const year = yearSelect.value;
+                const feedbackElement = document.getElementById('year-feedback');
+                
+                if (year === '' || year === null) {
+                    yearSelect.classList.add('is-invalid');
+                    yearSelect.classList.remove('is-valid');
+                    feedbackElement.textContent = 'Please select your year.';
+                    return false;
+                } else {
+                    yearSelect.classList.remove('is-invalid');
+                    yearSelect.classList.add('is-valid');
+                    return true;
+                }
+            }
+            
+            function validateTerms() {
+                const checked = termsCheckbox.checked;
+                const feedbackElement = document.getElementById('terms-feedback');
+                
+                if (!checked) {
+                    termsCheckbox.classList.add('is-invalid');
+                    feedbackElement.textContent = 'You must agree before submitting.';
+                    return false;
+                } else {
+                    termsCheckbox.classList.remove('is-invalid');
+                    return true;
+                }
+            }
+            
+            // Event listeners for real-time validation
+            nameInput.addEventListener('input', validateName);
+            emailInput.addEventListener('input', validateEmail);
+            yearSelect.addEventListener('change', validateYear);
+            termsCheckbox.addEventListener('change', validateTerms);
+            
+            // Form submission
+            subscriptionForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const isNameValid = validateName();
+                const isEmailValid = validateEmail();
+                const isYearValid = validateYear();
+                const areTermsAccepted = validateTerms();
+                
+                if (isNameValid && isEmailValid && isYearValid && areTermsAccepted) {
+                    // Show loading state
+                    const subscribeButton = document.getElementById('subscribe-button');
+                    subscribeButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Subscribing...';
+                    subscribeButton.disabled = true;
+                    
+                    // Simulate API call
+                    setTimeout(() => {
+                        // Reset button
+                        subscribeButton.innerHTML = 'Subscribe';
+                        subscribeButton.disabled = false;
+                        
+                        // Show success message
+                        subscriptionAlert.classList.remove('d-none', 'alert-danger');
+                        subscriptionAlert.classList.add('alert-success', 'subscription-success');
+                        subscriptionAlert.innerHTML = '<i class="fas fa-check-circle me-2"></i> Thank you for subscribing! You will receive our newsletters soon.';
+                        
+                        // Reset form
+                        subscriptionForm.reset();
+                        nameInput.classList.remove('is-valid');
+                        emailInput.classList.remove('is-valid');
+                        yearSelect.classList.remove('is-valid');
+                        
+                        // Scroll to the alert
+                        subscriptionAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 2000);
+                } else {
+                    // Show error message
+                    subscriptionAlert.classList.remove('d-none', 'alert-success');
+                    subscriptionAlert.classList.add('alert-danger', 'shake');
+                    subscriptionAlert.innerHTML = '<i class="fas fa-exclamation-circle me-2"></i> Please fix the errors in the form before submitting.';
+                    
+                    // Remove shake animation after it completes
+                    setTimeout(() => {
+                        subscriptionAlert.classList.remove('shake');
+                    }, 500);
+                }
+            });
+            
+            // Initialize the page
+            populateRecentNewsletters();
+            populateArchivedNewsletters();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members - #Include IT Technical Club SGSITS</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            --secondary-gradient: linear-gradient(135deg, #0061ff 0%, #60efff 100%);
+            --dark-gradient: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            --accent-gradient: linear-gradient(135deg, #f857a6 0%, #ff5858 100%);
+        }
+        
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* 3D Navbar */
+        .navbar {
+            background: var(--dark-gradient) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .navbar-brand img {
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+            margin-right: 10px;
+            transform: perspective(800px) rotateY(15deg);
+            transition: transform 0.5s ease;
+        }
+        
+        .navbar-brand:hover img {
+            transform: perspective(800px) rotateY(0deg);
+        }
+        
+        .nav-link {
+            position: relative;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #fff, transparent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .page-header {
+            background: var(--primary-gradient);
+            position: relative;
+            overflow: hidden;
+            padding: 80px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            transform: rotate(45deg);
+        }
+        
+        .display-4 {
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Member Cards */
+        .members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        
+        .member {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            padding: 20px;
+            width: 220px;
+            text-align: center;
+            transition: all 0.3s ease;
+            transform: perspective(1000px) rotateX(0deg);
+        }
+        
+        .member:hover {
+            transform: perspective(1000px) rotateX(5deg) translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease;
+            margin-bottom: 15px;
+        }
+        
+        .member:hover img {
+            transform: rotateZ(10deg) scale(1.1);
+        }
+        
+        .member h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .member a {
+            text-decoration: none;
+            color: #0073b1;
+            font-weight: 600;
+            position: relative;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        .member a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-gradient);
+            transition: width 0.3s ease;
+        }
+        
+        .member a:hover::after {
+            width: 100%;
+        }
+        
+        /* Section Titles */
+        h2.section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin: 50px 0 30px;
+            font-weight: 700;
+            color: #333;
+            text-align: center;
+        }
+        
+        h2.section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--secondary-gradient);
+            border-radius: 3px;
+        }
+        
+        /* Footer */
+        footer {
+            position: relative;
+            overflow: hidden;
+            background: var(--dark-gradient);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .social-icons {
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+            color: white;
+        }
+        
+        .social-icons a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        footer ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        footer ul li {
+            margin-bottom: 10px;
+        }
+        
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        footer ul li a:hover {
+            color: rgba(255, 255, 255, 0.7);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Loading Animation */
+        .loading-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .spinner {
+            width: 80px;
+            height: 80px;
+            border: 8px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loading-animation" id="loadingAnimation">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="logo.png.png" alt="#Include Logo" height="40">
+                INCLUDE
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/members.html">Members</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/newsletter.html">Newsletter</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="page-header text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4">Our Members</h1>
+                    <p class="lead">Meet the talented students who form the backbone of our technical community.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Seniors & Faculty</h2>
+        <div class="members" id="seniors"></div>
+        
+        <h2 class="section-title">Juniors</h2>
+        <div class="members" id="juniors"></div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-about">
+                        <h3><span class="hashtag">#</span>Include</h3>
+                        <p>The official club of the Information Technology department dedicated to fostering technical skills and innovation.</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/includesgsits" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/include_sgsits" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/include-sgsits" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="events.html">Events</a></li>
+                            <li><a href="members.html">Members</a></li>
+                            <li><a href="newsletter.html">Newsletter</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="footer-contact">
+                        <h3>Contact Us</h3>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt"></i> IT Department, SGSITS, Indore</li>
+                            <li><i class="fas fa-envelope"></i> include@sgsits.ac.in</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2025 #Include. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="text-md-end">Designed by Khushi Soni & Komal Jatiya</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        const seniors =[
+            { name: "Rashi", role: "Senior", image: "rashi.jpeg", linkedin: "#" },
+            { name: "Rashmi mohan ", role: "Senior", image: "rashmi.jpeg", linkedin: "#" },
+            { name: "Rishi Raghuwanshi ", role: "Senior", image: "rishi.jpeg", linkedin: "#" },
+            { name: "Sahil Sangtani ", role: "Senior", image: "profile.jpg", linkedin: "#" },
+            { name: "Sanskar Sharma", role: "Senior", image: "sanskar.jpeg", linkedin: "#" },
+            { name: "Teesha Dembla", role: "Senior", image: "teesha.jpeg", linkedin: "#" },
+            { name: "Vanshul Sir", role: "Senior IT", image: "vanshul.jpeg", linkedin: "#" },
+            { name: "Vishal Mandele", role: "Senior", image: "vishal.jpeg", linkedin: "#" },
+            { name: "Yash Rughwani ", role: "Senior", image: "yashraghuwanshi.jpeg", linkedin: "#" },
+            { name: "Kaustubh", role: "Senior", image: "profile.jpg", linkedin: "#" },
+            { name: "Kishan ", role: "Senior", image: "kishan.jpeg", linkedin: "#" },
+            { name: "Kurnika Bhawel ", role: "Senior", image: "kurnika.jpeg", linkedin: "#" },
+            { name: "Manasvi", role: "Senior", image: "manasvi.jpeg", linkedin: "#" },
+            { name: "Moksha ", role: "Senior", image: "moksha.jpeg", linkedin: "#" },
+            { name: "Muskan Gupta", role: "Senior", image: "muskangupta.jpeg", linkedin: "#" },
+            { name: "Pavesh ", role: "Senior IT", image: "", linkedin: "#" },
+            { name: "Piyush ", role: "Senior", image: "piyush.jpeg", linkedin: "#" },
+            { name: "Raghav Agrawal", role: "Senior", image: "raghavagrawal.jpeg", linkedin: "#" },
+            { name: "Raj Verma ", role: "Senior IT", image: "raj.jpeg", linkedin: "#" },
+            { name: "Abhishek Verma", role: "Senior", image: "abhishek.jpeg", linkedin: "#" },
+            { name: "Adarsh Langde", role: "Senior", image: "adarsh.jpeg", linkedin: "#" },
+            { name: "Apoorva bansal", role: "Senior", image: "apoorva.jpeg", linkedin: "#" },
+            { name: "Arin Zingade", role: "Senior", image: "arin.jpej", linkedin: "#" },
+            { name: "Dipanshu Namdev", role: "Senior", image: "deepanshu.jpeg", linkedin: "#" },
+            { name: "Faraz Khan", role: "Senior", image: "profile.jpg", linkedin: "#" },
+            { name: "Isha patel", role: "Senior", image: "whatsapp.jpeg", linkedin: "#" },
+            { name: "Kanishk gupta ", role: "Senior", image: "kanishkgupta.jpeg", linkedin: "#" },
+            { name: "Kanishka gupta", role: "Senior IT", image: "kanishkagupta.jpeg", linkedin: "#" },
+            { name: "Raghav Birla", role: "Senior IT", image: "raghavbirla.jpeg", linkedin: "#" }
+        ];
+        const juniors =  [
+            { name: "Hemant Dixit", role: "Junior IT", image: "hemantdixit.jpeg", linkedin: "#" },
+            { name: "Hitakshi Gupta", role: "Junior IT", image: "profile.jpg", linkedin: "#" },
+            { name: "Murtaza Sadriwala", role: "Junior IT", image: "murtaza.jpeg", linkedin: "#" },
+            { name: "Neel Desai", role: "Junior IT", image: "neeldesai.jpeg", linkedin: "#" },
+            { name: "Ojasv Agrawal", role: "Junior IT", image: "profile.jpg", linkedin: "#" },
+            { name: "Saloni Jain", role: "Junior IT", image: "salonijain.jpeg", linkedin: "#" },
+            { name: "Sushil Sethiya", role: "Junior IT", image: "profile.jpg", linkedin: "#" },
+            { name: "Vaibhav Singh Tomar", role: "Junior IT", image: "profile.jpg", linkedin: "#" },
+            { name: "Yameesh Nayak", role: "Junior IT", image: "yameesh.jpeg", linkedin: "#" },
+            { name: "Aditya Rathore", role: "Junior IT", image: "profile.jpg", linkedin: "#" },
+            { name: "Atharva Jain", role: "Junior IT", image: "atharav.jpeg", linkedin: "#" },
+            { name: "Dilpreet Singh Gill", role: "Junior IT", image: "dilpreet.jpeg", linkedin: "#" }
+        ];
+
+        function renderMembers(members, containerId) {
+            const container = document.getElementById(containerId);
+            members.forEach(member => {
+                const div = document.createElement("div");
+                div.className = "member";
+                div.innerHTML = `
+                    <img src="${member.image}" alt="${member.name}">
+                    <h3>${member.name}</h3>
+                    <p>${member.role}</p>
+                    <a href="${member.linkedin}" target="_blank">LinkedIn <i class="fab fa-linkedin"></i></a>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        renderMembers(seniors, "seniors");
+        renderMembers(juniors, "juniors");
+       
+    </script>
+    
+    <!-- Hide loading animation after page loads -->
+    <script>
+        window.addEventListener('load', function() {
+            document.getElementById('loadingAnimation').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

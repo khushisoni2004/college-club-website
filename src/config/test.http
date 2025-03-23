@@ -1,0 +1,576 @@
+### Get all events
+GET http://localhost:5000/api/events
+
+### Get all faculty
+GET http://localhost:5000/api/faculty
+
+### Create a new event
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "Web Development Workshop",
+  "description": "Learn modern web development techniques",
+  "date": "2025-05-20",
+  "category": "Webinar",
+  "location": "IT Department, SGSITS"
+}
+### Create CodeFusion 2025
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "CodeFusion 2025",
+  "type": "hackathon",
+  "date": "2025-05-15",
+  "time": "09:00",
+  "location": "SGSITS Main Auditorium",
+  "description": "A 36-hour hackathon focusing on AI and Machine Learning solutions for real-world problems. Teams of 2-4 can participate to win exciting prizes and internship opportunities.",
+  "image": "hackathon1.jpg",
+  "registrationLink": "https://includesgsits.tech/codefusion",
+  "featured": true,
+  "category": "Hackathon",
+  "status": "upcoming"
+}
+
+### Send Request
+
+### Create HackIT 2024
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "HackIT 2024",
+  "type": "hackathon",
+  "date": "2024-11-18",
+  "time": "10:00",
+  "location": "IT Department, SGSITS",
+  "description": "A 24-hour hackathon dedicated to cybersecurity and ethical hacking. Learn how to protect digital infrastructure while competing for cash prizes.",
+  "image": "hackathon2.jpg",
+  "registrationLink": "https://includesgsits.tech/hackit",
+  "featured": false,
+  "category": "Hackathon",
+  "status": "past"
+}
+
+### Send Request
+
+### Create InnovateX
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "InnovateX",
+  "type": "hackathon",
+  "date": "2024-09-25",
+  "time": "08:30",
+  "location": "Virtual Event",
+  "description": "An online hackathon focused on innovative solutions for sustainable development. Participants can join from anywhere in the world.",
+  "image": "hackathon3.jpg",
+  "registrationLink": "https://includesgsits.tech/innovatex",
+  "featured": false,
+  "category": "Hackathon",
+  "status": "past"
+}
+
+### Send Request
+
+### Create BlockchainBuild
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "BlockchainBuild",
+  "type": "hackathon",
+  "date": "2024-07-12",
+  "time": "09:00",
+  "location": "SGSITS Central Lab",
+  "description": "A specialized hackathon for blockchain enthusiasts. Build decentralized applications and smart contracts during this intensive 48-hour event.",
+  "image": "hackathon4.jpg",
+  "registrationLink": "https://includesgsits.tech/blockchainbuild",
+  "featured": false,
+  "category": "Hackathon",
+  "status": "past"
+}
+
+### Send Request
+
+### Create GreenTech Challenge
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "GreenTech Challenge",
+  "type": "hackathon",
+  "date": "2024-05-05",
+  "time": "10:00",
+  "location": "IT Department, SGSITS",
+  "description": "Develop technological solutions for environmental challenges. This hackathon focuses on sustainability and eco-friendly innovations.",
+  "image": "hackathon5.jpg",
+  "registrationLink": "https://includesgsits.tech/greentech",
+  "featured": false,
+  "category": "Hackathon",
+  "status": "past"
+}
+
+### Send Request
+
+### Create HealthHack
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "HealthHack",
+  "type": "hackathon",
+  "date": "2024-03-15",
+  "time": "09:00",
+  "location": "Virtual Event",
+  "description": "An online hackathon for developing healthcare solutions. Work on medical applications, diagnostics tools, and healthcare management systems.",
+  "image": "hackathon6.jpg",
+  "registrationLink": "https://includesgsits.tech/healthhack",
+  "featured": false,
+  "category": "Hackathon",
+  "status": "past"
+}
+
+### Send Request
+
+### Create GameDev Jam
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "GameDev Jam",
+  "type": "hackathon",
+  "date": "2025-04-05",
+  "time": "10:00",
+  "location": "Computer Lab 3, IT Department",
+  "description": "A game development hackathon where participants create original games in 48 hours. Open for both beginners and experienced developers.",
+  "image": "hackathon7.jpg",
+  "registrationLink": "https://includesgsits.tech/gamedevjam",
+  "featured": true,
+  "category": "Hackathon",
+  "status": "upcoming"
+}
+
+### Send Request
+
+### Create CodeWars 2025
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "CodeWars 2025",
+  "type": "coding",
+  "date": "2025-03-30",
+  "time": "14:00",
+  "location": "Online (CodeForces Platform)",
+  "description": "A competitive coding contest with multiple rounds testing algorithmic and problem-solving skills. Compete individually to climb the leaderboard.",
+  "image": "coding1.jpg",
+  "registrationLink": "https://includesgsits.tech/codewars",
+  "featured": true,
+  "category": "Coding",
+  "status": "upcoming"
+}
+
+### Send Request
+
+### Create Byte Battle
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "Byte Battle",
+  "type": "coding",
+  "date": "2024-10-12",
+  "time": "10:00",
+  "location": "IT Department Labs",
+  "description": "A fast-paced coding competition with time constraints. Solve problems efficiently to win exciting prizes and recognition.",
+  "image": "coding2.jpg",
+  "registrationLink": "https://includesgsits.tech/bytebattle",
+  "featured": false,
+  "category": "Coding",
+  "status": "past"
+}
+
+### Send Request
+
+### Create Algo Arena
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "Algo Arena",
+  "type": "coding",
+  "date": "2024-08-18",
+  "time": "09:00",
+  "location": "Virtual Event",
+  "description": "Test your algorithmic skills in this online coding competition. Multiple difficulty levels available for beginners to experts.",
+  "image": "coding3.jpg",
+  "registrationLink": "https://includesgsits.tech/algoarena",
+  "featured": false,
+  "category": "Coding",
+  "status": "past"
+}
+
+### Send Request
+
+### Create Debug Derby
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "Debug Derby",
+  "type": "coding",
+  "date": "2024-06-25",
+  "time": "11:00",
+  "location": "Computer Lab 2, IT Department",
+  "description": "A unique contest focused on debugging skills. Find and fix bugs in provided code within the time limit.",
+  "image": "coding4.jpg",
+  "registrationLink": "https://includesgsits.tech/debugderby",
+  "featured": false,
+  "category": "Coding",
+  "status": "past"
+}
+
+### Send Request
+
+### Create Python Challenge
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "Python Challenge",
+  "type": "coding",
+  "date": "2024-04-16",
+  "time": "10:00",
+  "location": "Online (HackerRank Platform)",
+  "description": "A Python-specific coding contest testing your proficiency with the language. From basic syntax to advanced libraries.",
+  "image": "coding5.jpg",
+  "registrationLink": "https://includesgsits.tech/pythonchallenge",
+  "featured": false,
+  "category": "Coding",
+  "status": "past"
+}
+
+### Send Request
+
+### Create Frontend Faceoff
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "Frontend Faceoff",
+  "type": "coding",
+  "date": "2024-02-20",
+  "time": "14:00",
+  "location": "IT Department, SGSITS",
+  "description": "A contest for frontend developers. Create responsive and beautiful interfaces based on provided designs and requirements.",
+  "image": "coding6.jpg",
+  "registrationLink": "https://includesgsits.tech/frontendfaceoff",
+  "featured": false,
+  "category": "Coding",
+  "status": "past"
+}
+
+### Send Request
+
+### Create DataStructure Duel
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "DataStructure Duel",
+  "type": "coding",
+  "date": "2025-04-10",
+  "time": "09:00",
+  "location": "Computer Labs, IT Department",
+  "description": "A competition focused on data structures and their implementations. Test your knowledge of efficient data organization and manipulation.",
+  "image": "coding7.jpg",
+  "registrationLink": "https://includesgsits.tech/dsduel",
+  "featured": true,
+  "category": "Coding",
+  "status": "upcoming"
+}
+
+### Send Request
+
+### Create Cloud Computing Workshop
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "Cloud Computing Workshop",
+  "type": "workshop",
+  "date": "2025-04-18",
+  "time": "10:00",
+  "location": "IT Seminar Hall, SGSITS",
+  "description": "A comprehensive workshop on cloud platforms like AWS, Azure, and Google Cloud. Learn deployment, scaling, and management of cloud resources.",
+  "image": "workshop1.jpg",
+  "registrationLink": "https://includesgsits.tech/cloudworkshop",
+  "featured": true,
+  "category": "Workshop",
+  "status": "upcoming"
+}
+
+### Send Request
+
+### Create Machine Learning Fundamentals
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "Machine Learning Fundamentals",
+  "type": "workshop",
+  "date": "2024-10-05",
+  "time": "09:00",
+  "location": "IT Department, SGSITS",
+  "description": "Introduction to machine learning algorithms and frameworks. Hands-on experience with datasets and model training.",
+  "image": "workshop2.jpg",
+  "registrationLink": "https://includesgsits.tech/mlworkshop",
+  "featured": false,
+  "category": "Workshop",
+  "status": "past"
+}
+
+### Send Request
+
+### Create Web Development Bootcamp
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "Web Development Bootcamp",
+  "type": "workshop",
+  "date": "2024-09-15",
+  "time": "10:00",
+  "location": "Computer Lab 1, IT Department",
+  "description": "A two-day intensive workshop covering frontend and backend development. Build a complete web application from scratch.",
+  "image": "workshop3.jpg",
+  "registrationLink": "https://includesgsits.tech/webdevbootcamp",
+  "featured": false,
+  "category": "Workshop",
+  "status": "past"
+}
+
+### Send Request
+
+### Create Cybersecurity Essentials
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "Cybersecurity Essentials",
+  "type": "workshop",
+  "date": "2024-07-20",
+  "time": "09:30",
+  "location": "IT Seminar Hall, SGSITS",
+  "description": "Learn essential cybersecurity practices, vulnerability assessment, and penetration testing techniques in this hands-on workshop.",
+  "image": "workshop4.jpg",
+  "registrationLink": "https://includesgsits.tech/cybersecurityworkshop",
+  "featured": false,
+  "category": "Workshop",
+  "status": "past"
+}
+
+### Send Request
+
+### Create Mobile App Development
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "Mobile App Development",
+  "type": "workshop",
+  "date": "2024-06-08",
+  "time": "10:00",
+  "location": "Computer Lab 3, IT Department",
+  "description": "A workshop on developing mobile applications for Android and iOS using cross-platform frameworks like React Native and Flutter.",
+  "image": "workshop5.jpg",
+  "registrationLink": "https://includesgsits.tech/mobileappworkshop",
+  "featured": false,
+  "category": "Workshop",
+  "status": "past"
+}
+
+### Send Request
+
+### Create Database Design and Optimization
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "Database Design and Optimization",
+  "type": "workshop",
+  "date": "2024-04-22",
+  "time": "09:00",
+  "location": "IT Department, SGSITS",
+  "description": "Learn database design principles, normalization, indexing, and query optimization techniques for better performance.",
+  "image": "workshop6.jpg",
+  "registrationLink": "https://includesgsits.tech/databaseworkshop",
+  "featured": false,
+  "category": "Workshop",
+  "status": "past"
+}
+
+### Send Request
+
+### Create DevOps and CI/CD Pipeline
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "DevOps and CI/CD Pipeline",
+  "type": "workshop",
+  "date": "2025-03-25",
+  "time": "10:00",
+  "location": "Online Workshop",
+  "description": "Introduction to DevOps practices and implementing Continuous Integration/Continuous Deployment pipelines using Jenkins, GitHub Actions, etc.",
+  "image": "workshop7.jpg",
+  "registrationLink": "https://includesgsits.tech/devopsworkshop",
+  "featured": true,
+  "category": "Workshop",
+  "status": "upcoming"
+}
+
+### Send Request
+
+### Create Careers in Data Science
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "Careers in Data Science",
+  "type": "webinar",
+  "date": "2025-05-05",
+  "time": "17:00",
+  "location": "Online (Zoom)",
+  "description": "Industry experts share insights about career paths in data science, required skills, and job opportunities in this growing field.",
+  "image": "webinar1.jpg",
+  "registrationLink": "https://includesgsits.tech/datasciencewebinar",
+  "featured": true,
+  "category": "Webinar",
+  "status": "upcoming"
+}
+
+### Send Request
+
+### Create Blockchain Technology and Future
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "Blockchain Technology and Future",
+  "type": "webinar",
+  "date": "2024-11-10",
+  "time": "18:00",
+  "location": "Online (Microsoft Teams)",
+  "description": "Explore the future of blockchain beyond cryptocurrencies. Learn about enterprise applications, smart contracts, and emerging trends.",
+  "image": "webinar2.jpg",
+  "registrationLink": "https://includesgsits.tech/blockchainwebinar",
+  "featured": false,
+  "category": "Webinar",
+  "status": "past"
+}
+
+### Send Request
+
+### Create Artificial Intelligence Ethics
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "Artificial Intelligence Ethics",
+  "type": "webinar",
+  "date": "2024-09-20",
+  "time": "16:30",
+  "location": "Online (Zoom)",
+  "description": "Discussion on ethical considerations in AI development and deployment. Addressing bias, transparency, and responsible AI practices.",
+  "image": "webinar3.jpg",
+  "registrationLink": "https://includesgsits.tech/aiethicswebinar",
+  "featured": false,
+  "category": "Webinar",
+  "status": "past"
+}
+
+### Send Request
+
+### Create Tech Interview Preparation
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "Tech Interview Preparation",
+  "type": "webinar",
+  "date": "2024-08-05",
+  "time": "17:00",
+  "location": "Online (Google Meet)",
+  "description": "Tips and strategies for technical interviews at top tech companies. Includes coding challenges, system design, and behavioral questions.",
+  "image": "webinar4.jpg",
+  "registrationLink": "https://includesgsits.tech/techinterviewwebinar",
+  "featured": false,
+  "category": "Webinar",
+  "status": "past"
+}
+
+### Send Request
+
+### Create Open Source Contribution
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "Open Source Contribution",
+  "type": "webinar",
+  "date": "2024-07-15",
+  "time": "18:00",
+  "location": "Online (Zoom)",
+  "description": "Learn how to contribute to open-source projects. Finding beginner-friendly issues, making pull requests, and working with the community.",
+  "image": "webinar5.jpg",
+  "registrationLink": "https://includesgsits.tech/opensourcewebinar",
+  "featured": false,
+  "category": "Webinar",
+  "status": "past"
+}
+
+### Send Request
+
+### Create Quantum Computing Basics
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "Quantum Computing Basics",
+  "type": "webinar",
+  "date": "2024-05-30",
+  "time": "17:30",
+  "location": "Online (Microsoft Teams)",
+  "description": "Introduction to quantum computing concepts, current state of technology, and potential applications in the near future.",
+  "image": "webinar6.jpg",
+  "registrationLink": "https://includesgsits.tech/quantumwebinar",
+  "featured": false,
+  "category": "Webinar",
+  "status": "past"
+}
+
+### Send Request
+
+### Create Entrepreneurship in Tech
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "title": "Entrepreneurship in Tech",
+  "type": "webinar",
+  "date": "2025-04-15",
+  "time": "18:00",
+  "location": "Online (Zoom)",
+  "description": "Successful tech entrepreneurs share their journey, challenges, and insights for students interested in starting their own tech ventures.",
+  "image": "webinar7.jpg",
+  "registrationLink": "https://includesgsits.tech/entrepreneurshipwebinar",
+  "featured": true,
+  "category": "Webinar",
+  "status": "upcoming"
+}
+
+### Send Request
