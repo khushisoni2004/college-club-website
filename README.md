@@ -1,64 +1,59 @@
 # College Club Website
 
-College Club Website is a private JavaScript web application for managing a technical club website. It provides structured pages for club information, events, team members, gallery content, announcements, and contact workflows.
+A responsive college club website for managing and showcasing club information, events, members, gallery content, newsletters, announcements, and contact workflows.
 
-The project is designed as a maintainable web application rather than a static one-page template. It separates server logic, public assets, route handling, and configuration so the site can be tested, reviewed, and extended safely.
+## Live Demo
+
+https://college-club-website.vercel.app/
 
 ## Features
 
-- Club landing page and informational sections
-- Event listing and announcement content
-- Member/team presentation pages
-- Gallery and public asset management
-- Contact workflow structure
-- Environment-based configuration
-- Reproducible local setup
-- Docker-based test environment
+- Responsive landing page
+- About section for club information
+- Events page
+- Members/team showcase
+- Gallery section
+- Newsletter page
+- Contact and registration workflow
+- Node.js and Express.js backend setup
+- Clean and maintainable project structure
 
 ## Tech Stack
 
-- JavaScript
-- Node.js
-- Express.js
-- HTML/CSS
-- MongoDB-ready configuration
-
-## Setup
-
-Install dependencies:
-
-    npm install
-
-Create local environment file:
-
-    cp .env.example .env
-
-Run the app:
-
-    npm start
-
-Run tests:
-
-    npm test
+| Category | Technology |
+|---|---|
+| Frontend | HTML, CSS, JavaScript |
+| Backend | Node.js, Express.js |
+| Database | MongoDB-ready configuration |
+| Deployment | Vercel |
+| Tools | Git, GitHub, VS Code |
 
 ## Project Structure
 
-    .
-    ├── public/
-    ├── routes/
-    ├── views/
-    ├── server.js
-    ├── package.json
-    ├── .env.example
-    ├── .gitignore
-    └── Dockerfile
-
-## Privacy and Safety
-
-This repository should not contain real secrets, private credentials, personal documents, local installers, or generated dependency folders.
-
-The `.env` file is ignored. Use `.env.example` for safe configuration documentation.
-
-## Review Notes
-
-This project is a private web application repository with source code, configuration, reproducible setup instructions, and a Dockerfile for automated review.
+```text
+college-club-website/
+│
+├── public/
+│   ├── images/
+│   └── js/
+│
+├── pages/
+│   ├── about.html
+│   ├── events.html
+│   ├── members.html
+│   └── newsletter.html
+│
+├── src/
+│   ├── config/
+│   └── db.js
+│
+├── test/
+│
+├── index.html
+├── server.js
+├── package.json
+├── package-lock.json
+├── Dockerfile
+├── .gitignore
+└── README.md
+>
