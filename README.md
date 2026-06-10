@@ -36,6 +36,12 @@ college-club-website/
 ├── public/
 │   ├── images/
 │   └── js/
+│       ├── app.js
+│       ├── event-registration.js
+│       ├── events.js
+│       ├── main.js
+│       ├── members.js
+│       └── newsletter.js
 │
 ├── pages/
 │   ├── about.html
@@ -44,16 +50,12 @@ college-club-website/
 │   └── newsletter.html
 │
 ├── src/
-│   ├── config/
 │   └── db.js
-│
-├── test/
 │
 ├── index.html
 ├── server.js
 ├── package.json
 ├── package-lock.json
-├── Dockerfile
-├── .gitignore
-└── README.md
+├── README.md
+└── Dockerfile
 >
